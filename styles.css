@@ -1,0 +1,132 @@
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    padding: 1rem;
+    background-color: #007bff; /* Color vibrante */
+}
+
+.navbar .navbar-brand {
+    font-size: 1.8rem;
+}
+
+/* Sección de Libros Populares */
+.books-section {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+.books-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilos para las tarjetas de libros */
+.card {
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    text-align: center;
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.card .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.card .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Imagen de los libros */
+.card-img-top {
+    object-fit: cover; /* Asegura que las imágenes mantengan su proporción */
+    height: 250px; /* Ajustamos la altura para que todas las imágenes tengan la misma altura */
+    width: 100%; /* Asegura que las imágenes cubran el 100% del ancho de la tarjeta */
+    border-bottom: 2px solid #ddd; /* Añadimos una línea sutil para separar la imagen del contenido */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .books-section h2 {
+        font-size: 2rem;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+
+    .cta-section p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .welcome-section h1 {
+        font-size: 2rem;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+    }
+
+    .cta-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .cta-section p {
+        font-size: 1rem;
+    }
+
+    .cta-section .btn-lg {
+        padding: 10px 20px;
+    }
+}
