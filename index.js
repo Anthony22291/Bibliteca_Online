@@ -88,4 +88,48 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cart.length > 0) {
         updateCart();
     }
+    function finalizarReserva() {
+        if (cart.length === 0) {
+            alert('Tu carrito está vacío. Agrega libros antes de finalizar.');
+            return;
+        }
+    
+        const summaryContainer = document.getElementById('purchase-summary');
+        const summaryItems = document.getElementById('summary-items');
+        const summaryTotal = document.getElementById('summary-total');
+    
+        // Limpiar contenido previo
+        summaryItems.innerHTML = '';
+        let total = 0;
+    
+        // Generar el resumen
+        cart.forEach((book, index) => {
+            total += book.price * book.quantity;
+            summaryItems.innerHTML += `
+                <p>${index + 1}. <strong>${book.title}</strong> - ${book.quantity} x $${book.price} = $${(book.quantity * book.price).toFixed(2)}</p>
+            `;
+        });
+    
+        summaryTotal.textContent = `Total: $${total.toFixed(2)}`;
+    
+        // Mostrar el resumen
+        summaryContainer.style.display = 'block';
+    
+        // Opcional: limpiar el carrito después de finalizar
+        cart = [];
+        localStorage.removeItem('cart');
+        updateCart();
+    }
+    
+     // Cambiar color de fondo al hacer scroll
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+    
 });
